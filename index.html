@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<title>打地鼠啦</title>
+		<meta name="description" content="这是一个基于HTML5 Canvas和Audio开发的游戏" />
+		<meta name="keywords"  content="HTML5,Canvas,HTML5游戏, HTML5版打地鼠" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<div id="hitmouse">
+			<!-- 预备界面 -->
+			<div id="gameCover" class="block background">
+				<!-- 声音控制按钮 -->
+				<a href="javascript:void(0)" id="btnSound" class="icon">&nbsp;</a>
+				<!-- 开始 -->
+				<a href="javascript:void(0)" id="btnPlay" class="icon">&nbsp;</a>
+				<!-- 帮助 -->
+				<a href="javascript:void(0)" id="btnHelp" class="icon">&nbsp;</a>
+				<!-- 关于我 -->
+				<a href="javascript:void(0)" id="btnAboutMe" class="icon">&nbsp;</a>
+				<!-- 加载资源 -->
+				<span id="progressText"></span>		
+			</div>	
+			<!-- 帮助界面 -->
+			<div id="HelpDiv" >
+			  <!-- 帮助图片 -->
+			  <img src="images/help.png"/>
+			  <a href="javascript:void(0)" id="btnBack" class="icon">&nbsp;</a>
+			</div>
+			<!-- 游戏主体 -->
+			<div id="gameBody" class="block">
+				<div id="gameCanvas" class="block">
+					<!-- Main背景层 -->
+					<canvas width="750" height="550" id="maincanvas" ></canvas>
+				</div>
+				<!-- 分数及暂停按钮 -->
+				<div id="numberAndPause" class="block">
+					<!-- 分数 -->
+					<div id="numberBefore" class="icon"></div>
+					<div id="number" ></div>
+					<!-- 暂停 -->
+					<a href="javascript:void(0)" id="btnPause" class="icon">&nbsp;</a>
+				</div>
+			</div>
+			<!-- 游戏结束 -->
+			<div id="gameOver" class="block">
+				<!-- 得分 -->
+				<span id="score"></span>
+				<!-- 准备 -->
+				<a href="javascript:void(0)" id="btnRetry" class="icon">&nbsp;</a>
+				<!-- 返回主菜单 -->
+				<a href="javascript:void(0)" id="btnBackToMenu" class="icon">&nbsp;</a>			
+			</div>
+			<div id="overlay"></div>
+		</div>
+		
+		<div id="rolling">
+			<h1>Who is Lucky ?</h1>
+			<div id="nextLoding"></div>
+		    <span class="photo">
+				<a href="###" onclick="return false;">
+					<img src="images/default.png" />
+				</a>
+				<p class="title text-overflow"></p>
+			</span>
+			<span class="photo">
+				<a href="###" onclick="return false;">
+					<img src="images/default.png" />
+				</a>
+				<p class="title text-overflow"></p>
+			</span>
+			<span class="photo">
+				<a href="###" onclick="return false;">
+					<img src="images/default.png" />
+				</a>
+				<p class="title text-overflow"></p>
+			</span>
+			<span class="photo">
+				<a href="###" onclick="return false;">
+					<img src="images/default.png" />
+				</a>
+				<p class="title text-overflow"></p>
+			</span>
+			<span class="photo">
+				<a href="###" onclick="return false;">
+					<img src="images/default.png" />
+				</a>
+				<p class="title text-overflow"></p>
+			</span>
+		</div>
+		<div class="clearfix"></div>
+		<div id="footer" class="footer">
+			<span style="display: none;">作者youwenda, 你可以通过youwenda@163.com联系到该作者</span>
+		</div>
+		<!--我使用这个框架的代码并不多，主要是工具类使用-->
+		<script type="text/javascript" src="myEngine/utils/lazyload-min.js"></script>
+		<script type="text/javascript">
+			LazyLoad.js([
+				 "myEngine/core/my.js" ,
+				 "myEngine/component/Component.js" ,
+				 "myEngine/component/DisplayObject.js", 
+				 "myEngine/component/Bitmap.js" ,
+				 "myEngine/utils/ImageManager.js", 
+				 "myEngine/utils/Database.js",
+				 "myEngine/utils/DOM.js",
+				 "myEngine/utils/Math.js" ,
+				 "myEngine/utils/buzz.js" ,
+				 
+				 "js/resources/images.js" ,
+				 "js/resources/audios.js" ,
+		         "js/frames/mouse.js" ,
+		         "js/frames/star.js" ,
+				 "js/frames/score.js" ,
+			 	 "js/classes/Audio.js" ,
+				 "js/classes/Animation.js", 
+				 "js/classes/star.js" 	,
+				 "js/classes/score.js" 	,		
+				 "js/classes/hammer.js" ,
+				 "js/classes/mouse.js" ,
+				 "js/classes/MouseHit.js", 
+				 "js/classes/UI.js" ,
+				 "js/main.js" 
+			]);
+			
+			var noop = function(){};
+			if(!window.console) {
+				window.console = {
+					log : noop,
+					info : noop
+				};
+			}
+		</script>
+	</body>
+</html>
